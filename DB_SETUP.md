@@ -1,4 +1,4 @@
-To populate Rails API database:
+To fetch data for Rails API database:
 (via Chrome Console)
 
 let url = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
