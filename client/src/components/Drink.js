@@ -16,7 +16,7 @@ export const Drink = (props) => {
       <strong>Instructions:</strong>
       <p>{props.drink.instructions}</p>
 
-      <img src={props.drink.img_url} height="400" width="400"/>
+      <img alt={props.drink.name} src={props.drink.img_url} height="400" width="400"/>
     </div>
   )
 }
