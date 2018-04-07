@@ -34,18 +34,36 @@ const loadDrink = {
   ]
 }
 
+// export function fetchCats() {
+//   return (dispatch) => {
+//     dispatch({ type: 'START_ADDING_CATS_REQUEST' });
+//     return fetch('http://www.catapi.com')
+//       .then(response => response.json())
+//       .then(cats => dispatch({ type: 'ADD_CATS', cats }));
+//   };
+// }
+
 export default class DrinkShow extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      number: 1,
+      drink: loadDrink,
     }
   }
 
+  search = () => {
+    const randomNum = Math.floor(Math.random() * Math.floor(250)) + 1
+    return fetch(`http://localhost:3001/recipes/${randomNum}`, {
+      accept: 'application/json',
+    }).then(response => response.json()).then(data => {
+      this.setState({
+        drink: data
+      })
+    });
+  }
+
   handleOnClick = () => {
-    this.setState({
-      number: Math.floor(Math.random() * Math.floor(250)) + 1
-    })
+    return this.search()
   }
 
   render() {
@@ -56,7 +74,7 @@ export default class DrinkShow extends React.Component {
         <p>Will display all info of a drink</p>
         <button onClick={this.handleOnClick}>Load New Drink</button>
         <hr/>
-        <Drink number={this.state.number} drink={loadDrink}/>
+        <Drink number={this.state.number} drink={this.state.drink}/>
       </div>
     )
   }

@@ -8,7 +8,7 @@ export const Drink = (props) => {
 
   return (
     <div>
-      <h3>Random Drink {props.number}</h3>
+      <h3>Random Drink {props.drink.id}</h3>
       <h2>{props.drink.name}</h2>
       <p>{props.drink.category} - <em>({props.drink.glass})</em></p>
       <strong>Ingredients:</strong>
@@ -16,7 +16,7 @@ export const Drink = (props) => {
       <strong>Instructions:</strong>
       <p>{props.drink.instructions}</p>
 
-      <img src={props.drink.img_url} />
+      <img src={props.drink.img_url} height="400" width="400"/>
     </div>
   )
 }
