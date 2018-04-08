@@ -6,16 +6,21 @@ export const Drink = (props) => {
   })
 
   return (
-    <div>
-      <h3>Random Drink {props.drink.id}</h3>
-      <h2>{props.drink.name}</h2>
-      <p>{props.drink.category} - <em>({props.drink.glass})</em></p>
-      <strong>Ingredients:</strong>
-      <ul>{ingredients}</ul>
-      <strong>Instructions:</strong>
-      <p>{props.drink.instructions}</p>
-
-      <img alt={props.drink.name} src={props.drink.img_url} height="400" width="400"/>
+    <div className="row">
+      <div className="col s12">
+        <h4 className="center-align">{props.drink.name}</h4><br/>
+        <div className="col s6 center-align" >
+          <img alt={props.drink.name} src={props.drink.img_url} height="400" width="400" />
+        </div>
+        <div className="col s6">
+          <br />
+          <p><strong>Category: </strong>{props.drink.category} - <em>({props.drink.glass})</em></p><br />
+          <strong>Ingredients:</strong>
+          <ul>{ingredients}</ul><br />
+          <strong>Instructions:</strong>
+          <p>{props.drink.instructions}</p>
+        </div>
+      </div>
     </div>
   )
 }
