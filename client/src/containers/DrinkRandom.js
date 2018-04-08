@@ -5,14 +5,8 @@ import { bindActionCreators } from 'redux';
 import { Drink } from '../components/Drink'
 import { loadRandomDrink } from '../actions/drinks'
 
-
-
 class DrinkRandom extends React.Component {
  
-  // componentWillMount(){
-  //   this.props.loadRandomDrink()
-  // }
-
   handleOnClick = () => {
     this.props.loadRandomDrink()
   }
