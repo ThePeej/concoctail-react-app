@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import DrinkShow from './containers/DrinkShow'
+import DrinkIndex from './containers/DrinkIndex'
 
 class App extends Component {
 
@@ -15,7 +16,7 @@ class App extends Component {
         </header> */}
 
         
-        <nav>
+        <nav className="blue-grey darken-4">
           <div className="nav-wrapper">
             <a href="#" className="brand-logo">Logo</a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -27,7 +28,8 @@ class App extends Component {
         </nav>
         <div className="container">
           <div className="col s-12">
-            <DrinkShow />
+            {/* <DrinkShow /> */}
+            <DrinkIndex />
           </div>
         </div>
 

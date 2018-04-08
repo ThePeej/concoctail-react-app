@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drink } from '../components/Drink'
+import { DrinkCardGrid } from '../components/DrinkCardGrid'
 
 
 
@@ -44,37 +44,40 @@ const loadDrink = {
 // }
 
 export default class DrinkShow extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      drink: loadDrink,
+      drinks: [],
     }
   }
 
-  search = () => {
-    const randomNum = Math.floor(Math.random() * Math.floor(250)) + 1
-    return fetch(`http://localhost:3001/recipes/${randomNum}`, {
+  loadDrinkCards = () => {
+    fetch(`http://localhost:3001/recipes/`, {
       accept: 'application/json',
     }).then(response => response.json()).then(data => {
-      this.setState({
-        drink: data
+            this.setState({
+        drinks: data
       })
+      // console.log(this.state.drinks)
     });
   }
 
   handleOnClick = () => {
-    return this.search()
+    return this.loadDrinkCards()
   }
 
+  componentDidMount(){
+    this.loadDrinkCards() 
+  }
+  
   render() {
-
     return (
-      <div>
-        <h1>Drink Show Component</h1>
-        <p>Will display all info of a drink</p>
-        <button className="waves-effect waves-blue-grey btn-flat" onClick={this.handleOnClick}>Load New Drink</button>
-        <hr/>
-        <Drink number={this.state.number} drink={this.state.drink}/>
+      <div className="row">
+        <h1>Drink Index Component</h1>
+        <p>Will display drink cards</p>
+        <button className="waves-effect waves-blue-grey btn-flat" onClick={this.handleOnClick}>Load All Drink</button>
+        <hr /><br />
+        <DrinkCardGrid drinks={this.state.drinks} />
       </div>
     )
   }
