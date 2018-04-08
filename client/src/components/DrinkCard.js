@@ -7,7 +7,7 @@ export const DrinkCard = (props) => {
   })
 
   return(
-    <div className="card col s4">
+    <div className="card stick-action col s3">
       <div className="card-image waves-effect waves-block waves-light">
         <img className="activator" src={props.drink.img_url} />
        </div>

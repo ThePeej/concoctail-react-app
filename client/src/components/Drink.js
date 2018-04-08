@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Drink = (props) => {
-
   const ingredients = props.drink.ingredients.map((ingredient, i) => {
     return <li key={i}>{ingredient.quantity} {ingredient.item.name}</li>
   })
