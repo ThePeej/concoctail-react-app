@@ -10,8 +10,10 @@ export default function drinks(state = {
     case "START_LOADING_DRINK":
       return Object.assign({}, state, {load: true})
     case "LOAD_DRINK":
-      let drink = action.payload
       return Object.assign({}, state, {drink: action.payload})
+    case "LOAD_ALL_DRINKS":
+      console.log(action.payload)
+      return Object.assign({}, state, { drinks: action.payload })
     default:
       return state
   }
