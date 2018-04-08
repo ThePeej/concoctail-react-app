@@ -9,9 +9,9 @@ import { loadRandomDrink } from '../actions/drinks'
 
 class DrinkRandom extends React.Component {
  
-  componentWillMount(){
-    this.props.loadRandomDrink()
-  }
+  // componentWillMount(){
+  //   this.props.loadRandomDrink()
+  // }
 
   handleOnClick = () => {
     this.props.loadRandomDrink()
@@ -25,7 +25,7 @@ class DrinkRandom extends React.Component {
         <h6>Look up a random cocktail recipe and give it a shot!</h6><br/>
         <button className="waves-effect waves-light btn" onClick={this.handleOnClick}>Random Drink</button>
         <br /><br /><hr />
-        <Drink drink={this.props.drink}/>
+        {this.props.drink !== '' ? <Drink drink={this.props.drink} /> : null}
       </div>
     )
   }

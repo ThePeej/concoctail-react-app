@@ -7,6 +7,7 @@ import './App.css';
 import DrinkShow from './containers/DrinkShow'
 import DrinkRandom from './containers/DrinkRandom'
 import DrinkIndex from './containers/DrinkIndex'
+import { Navbar } from './components/Navbar'
 
 class App extends Component {
 
@@ -14,20 +15,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav className="blue-grey darken-4">
-            <div className="nav-wrapper">
-              <a href="/" className="brand-logo">Concoctail</a>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><a href="sass.html">My Bar</a></li>
-                <li><a href="badges.html">All Recipes</a></li>
-                <li><a href="/drinks/random">Feelin' Adventurous</a></li>
-              </ul>
-            </div>
-          </nav>
+          <Navbar />
           <div className="container">
             <div className="col s-12">
               <Route exact path="/drinks/random" component={DrinkRandom} />
-              {/* <DrinkIndex /> */}
+              <Route exact path="/drinks" component={DrinkIndex} />
             </div>
           </div>
 

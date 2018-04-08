@@ -2,7 +2,7 @@ const initialDrink = {id: 1,name: "'57 Chevy with a White License Plate",categor
 
 export default function drinks(state = {
   drinks: [],
-  drink: initialDrink,
+  drink: '',
   loading: false,
 }, action) {
 
