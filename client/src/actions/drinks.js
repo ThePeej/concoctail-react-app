@@ -32,9 +32,13 @@ export function loadDrinks() {
 }
 
 
-export function loadMyBar(selector){
+export function loadMyBar(myBar){
   return (dispatch) => {
-    dispatch({ type: 'MYBAR_SELECTOR', payload: selector });
+    dispatch({ type: 'START_LOADING_DRINK' });
+    return fetch(`http://localhost:3001/recipes`, {
+      accept: 'application/json',
+    }).then(response => response.json())
+      .then(drinks => dispatch({ type: 'LOAD_ALL_DRINKS', payload: drinks }));
   };
 }
 

@@ -3,6 +3,7 @@ export default function drinks(state = {
   drink: '',
   myBar:[],
   loading: false,
+  barEssentials: { liquors: ["Gin", "Dark Rum", "Light Rum", "Tequila", "Brandy", "Bourbon", "Rye Whiskey", "Vodka"], liqueurs: ["Sweet Vermouth", "Dry Vermouth", "Amaretto", "Coffee Liqueur", "Orange Liqueur"], mixersGarnishes: ["Club Soda", "Tonic", "Ginger Ale", "Bitters"]}
 }, action) {
 
   switch(action.type){
