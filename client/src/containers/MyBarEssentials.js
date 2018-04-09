@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 
 import { myBarSelector } from '../actions/drinks'
 import { resetMyBar } from '../actions/drinks'
-import { loadMyBar } from '../actions/drinks'
 
 import { MyBarSelector } from '../components/MyBarSelector'
 
@@ -13,7 +12,6 @@ class MyBarEssentials extends React.Component {
 
   onFilter(selector) {
     this.props.myBarSelector(selector)
-    // this.props.loadMyBar(this.props.myBar)
   }
 
   handleMyBarReset(){
@@ -68,7 +66,6 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     myBarSelector: myBarSelector,
     resetMyBar: resetMyBar,
-    loadMyBar: loadMyBar
   }, dispatch);
 };
 

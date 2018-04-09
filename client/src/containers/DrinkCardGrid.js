@@ -20,10 +20,8 @@ class DrinkCardGrid extends React.Component {
   render(){
     const drinkTextCards = this.props.drinks.sort(this.sortByName).map((drink, i) => {
       if (this.props.site.myBar) {
-        console.log("Grid of Images")
         return <DrinkImageCard key={i} drink={drink} />
       } else {
-        console.log("Grid of Text Cards")
         return <DrinkTextCard key={i} drink={drink} />
       }
       

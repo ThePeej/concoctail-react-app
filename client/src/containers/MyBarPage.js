@@ -6,10 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { loadMyBar } from '../actions/drinks'
-import { myBarSelector } from '../actions/drinks'
 import { viewMyBar } from '../actions/site'
-
-import { MyBarSelector } from '../components/MyBarSelector'
 
 
 class MyBar extends React.Component {
