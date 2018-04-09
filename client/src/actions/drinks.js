@@ -32,8 +32,8 @@ export function loadDrinks() {
 }
 
 
-export function loadMyBar(missingEssentials){
-  console.log(missingEssentials)
+export function loadMyBar(barEssentials, missingEssentials){
+  console.log(barEssentials)
   return (dispatch) => {
     dispatch({ type: 'START_LOADING_DRINK' });
     return fetch(`http://localhost:3001/recipes`, {
@@ -42,14 +42,19 @@ export function loadMyBar(missingEssentials){
       .then(drinks => {
         let myDrinks = [] 
         drinks.forEach(drink =>{
-          let check = true;
+          let checkNoMissingEssentials = true;
+          let checkAnyBarEssentials = false;
           for(let i = 0; i < drink.ingredients.length; i++){
-            if (missingEssentials.includes(drink.ingredients[i].item.name)) {
-              check = false
+            if (missingEssentials.includes(drink.ingredients[i].item.name)) { //Checks if drink ingredient uses a bar essential that user does not have
+              checkNoMissingEssentials = false //if so, returns false
+            }
+            if (barEssentials.includes(drink.ingredients[i].item.name)) { //Checks to see that drink uses any bar essentials at all
+              checkAnyBarEssentials = true //if so, returns true
             }
           }
-          if (check) {
-            myDrinks.push(drink)
+          
+          if (checkNoMissingEssentials && checkAnyBarEssentials) { //if drink uses a bar essential, and the user has all the required essentials
+            myDrinks.push(drink) // push drink to drinks array to be returned
           }
         })
         dispatch({ type: 'LOAD_ALL_DRINKS', payload: myDrinks })
