@@ -30,3 +30,16 @@ export function loadDrinks() {
       .then(drinks => dispatch({ type: 'LOAD_ALL_DRINKS', payload: drinks }));
   };
 }
+
+
+export function loadMyBar(selector){
+  return (dispatch) => {
+    dispatch({ type: 'MYBAR_SELECTOR', payload: selector });
+  };
+}
+
+export function myBarSelector(selector){
+  return (dispatch) => {
+    dispatch({ type: 'MYBAR_SELECTOR', payload: selector });
+  };
+}

@@ -4,8 +4,8 @@ export function navbar(boolean){
   }
 }
 
-export function myBar(boolean) {
+export function viewMyBar(boolean) {
   return (dispatch) => {
-    dispatch({ type: "MYBAR", payload: boolean })
+    dispatch({ type: "VIEW_MYBAR", payload: boolean })
   }
 }

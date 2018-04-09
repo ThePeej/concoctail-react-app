@@ -21,7 +21,7 @@ class App extends Component {
       <Router>
         <div>
           {this.props.site.navbar ? <Navbar /> : null}
-          <div className={this.props.site.mybar ? "" : "container"}>
+          <div className={this.props.site.myBar ? "" : "container"}>
             <div className="col s-12">
             <Switch>
               <Route exact path ="/" component={Landing} />
