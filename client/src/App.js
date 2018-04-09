@@ -7,6 +7,7 @@ import './App.css';
 import DrinkShow from './containers/DrinkShow'
 import DrinkRandom from './containers/DrinkRandom'
 import DrinksIndex from './containers/DrinksIndex'
+import { Landing } from './components/Landing'
 import { Navbar } from './components/Navbar'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Navbar />
           <div className="container">
             <div className="col s-12">
+              <Route exact path ="/" component={Landing} />
               <Route exact path="/drinks/random" component={DrinkRandom} />
               <Route exact path="/drinks" component={DrinksIndex} />
             </div>
