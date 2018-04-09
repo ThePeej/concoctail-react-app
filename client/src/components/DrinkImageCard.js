@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const DrinkImageCard = (props) => {
 
@@ -7,11 +8,11 @@ export const DrinkImageCard = (props) => {
   return(
     <div className="col s3">
       <div className="card">
-        <a href={drink_url}>
+        <Link to={drink_url}>
           <span>
             <img className="responsive-img" src={props.drink.img_url} href={drink_url} alt={props.drink.name}/>
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   )

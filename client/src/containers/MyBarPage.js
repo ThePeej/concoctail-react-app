@@ -33,8 +33,8 @@ class MyBar extends React.Component {
           <MyBarEssentials />
         </div>
         <div className="center-align col s8">
-          <h4>What can I make with:</h4>
-          <button className="btn-small teal darken-1" onClick={() => this.onLoadMyBar(barEssentialsArray, missingEssentials)}>What can I make?</button>
+          <br/>
+          <button className="btn-large teal darken-1" onClick={() => this.onLoadMyBar(barEssentialsArray, missingEssentials)}>What can I make?</button>
           <hr/>
           {this.props.drinks !== [] ? <DrinkCardGrid drinks={this.props.drinks} /> : null}
         </div>
