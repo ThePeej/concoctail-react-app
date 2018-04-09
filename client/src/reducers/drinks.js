@@ -23,6 +23,8 @@ export default function drinks(state = {
         myBar.push(action.payload)
       }
       return Object.assign({}, state, {myBar: myBar})
+    case "RESET_MYBAR":
+      return Object.assign({}, state, {myBar: []})
     default:
       return state
   }

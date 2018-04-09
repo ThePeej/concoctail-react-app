@@ -5,7 +5,6 @@ import MyBarEssentials from '../containers/MyBarEssentials'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { loadDrinks } from '../actions/drinks'
 import { loadMyBar } from '../actions/drinks'
 import { myBarSelector } from '../actions/drinks'
 import { viewMyBar } from '../actions/site'
@@ -60,11 +59,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    loadDrinks: loadDrinks,
     loadMyBar: loadMyBar,
     viewMyBar: viewMyBar
   }, dispatch);
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyBar)

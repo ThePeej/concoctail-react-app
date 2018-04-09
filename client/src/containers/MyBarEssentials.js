@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { myBarSelector } from '../actions/drinks'
+import { resetMyBar } from '../actions/drinks'
 import { loadMyBar } from '../actions/drinks'
 
 import { MyBarSelector } from '../components/MyBarSelector'
@@ -13,6 +14,11 @@ class MyBarEssentials extends React.Component {
   onFilter(selector) {
     this.props.myBarSelector(selector)
     // this.props.loadMyBar(this.props.myBar)
+  }
+
+  handleMyBarReset(){
+    console.log("reset bar!")
+    this.props.resetMyBar()
   }
 
   generateFilters(item, i, filters) {
@@ -45,8 +51,7 @@ class MyBarEssentials extends React.Component {
         <p><strong>Mixers & Garnishes:</strong></p>
         {barEssentialMixersGarnishes}
         <br /><br /><br /><br />
-        <button onClick={() => this.onLoadAll()}>Reset My Bar</button><br /><br />
-        {/* <button onClick={() => this.onLoadAll()}>Load All Recipes</button> */}
+        <button onClick={() => this.handleMyBarReset()}>Reset My Bar</button><br /><br />
       </div>
     )
   }
@@ -63,6 +68,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     myBarSelector: myBarSelector,
+    resetMyBar: resetMyBar,
     loadMyBar: loadMyBar
   }, dispatch);
 };

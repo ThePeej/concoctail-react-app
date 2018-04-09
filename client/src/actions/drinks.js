@@ -52,7 +52,6 @@ export function loadMyBar(barEssentials, missingEssentials){
               checkAnyBarEssentials = true //if so, returns true
             }
           }
-          
           if (checkNoMissingEssentials && checkAnyBarEssentials) { //if drink uses a bar essential, and the user has all the required essentials
             myDrinks.push(drink) // push drink to drinks array to be returned
           }
@@ -65,5 +64,11 @@ export function loadMyBar(barEssentials, missingEssentials){
 export function myBarSelector(selector){
   return (dispatch) => {
     dispatch({ type: 'MYBAR_SELECTOR', payload: selector });
+  };
+}
+
+export function resetMyBar() {
+  return (dispatch) => {
+    dispatch({ type: 'RESET_MYBAR'});
   };
 }
