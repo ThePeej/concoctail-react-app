@@ -11,9 +11,11 @@ export const DrinkImageCard = (props) => {
   return(
     <div className="col s3">
       <div className="card">
-        <span>
-          <img className="responsive-img" src={props.drink.img_url} />
-        </span>
+        <a href={drink_url}>
+          <span>
+            <img className="responsive-img" src={props.drink.img_url} href={drink_url}/>
+          </span>
+        </a>
       </div>
     </div>
   )

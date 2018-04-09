@@ -12,8 +12,10 @@ export const MyBarSelector = (props) => {
   }
 
   return (
-    <button className={buttonClass} onClick={handleOnClick}>
-      {props.selector}
-    </button>
+    <div>
+      <button className={buttonClass} onClick={handleOnClick}>
+        {props.selector}
+      </button>
+    </div>
   )
 }

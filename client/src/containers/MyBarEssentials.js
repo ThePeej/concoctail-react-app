@@ -35,23 +35,22 @@ class MyBarEssentials extends React.Component {
 
   render() {
     const filters = this.props.myBar
-    const barEssentialLiquors = this.props.barEssentials.liquors.map((item, i) => this.generateFilters(item, i, filters))
-    const barEssentialLiqueurs = this.props.barEssentials.liqueurs.map((item, i) => this.generateFilters(item, i, filters))
-    const barEssentialMixersGarnishes = this.props.barEssentials.mixersGarnishes.map((item, i) => this.generateFilters(item, i, filters))
+    const barEssentialLiquors = this.props.barEssentials.liquors.sort().map((item, i) => this.generateFilters(item, i, filters))
+    const barEssentialLiqueurs = this.props.barEssentials.liqueurs.sort().map((item, i) => this.generateFilters(item, i, filters))
+    const barEssentialMixersGarnishes = this.props.barEssentials.mixersGarnishes.sort().map((item, i) => this.generateFilters(item, i, filters))
     return (
       <div className="center-align">
         <h4>Bar Essentials</h4>
-        <br />
         <p><strong>Liquors:</strong></p>
         {barEssentialLiquors}
-        <br /><br />
+        <br />
         <p><strong>Liqueurs:</strong></p>
         {barEssentialLiqueurs}
-        <br /><br />
+        <br />
         <p><strong>Mixers & Garnishes:</strong></p>
         {barEssentialMixersGarnishes}
-        <br /><br /><br /><br />
-        <button onClick={() => this.handleMyBarReset()}>Reset My Bar</button><br /><br />
+        <br />
+        <button className="btn-flat" onClick={() => this.handleMyBarReset()}><u>Reset My Bar</u></button><br /><br />
       </div>
     )
   }

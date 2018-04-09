@@ -8,7 +8,7 @@ export const Drink = (props) => {
   return (
     <div className="row">
       <div className="col s12">
-        <h4 className="center-align">{props.drink.name}</h4><br/>
+        <h2 className="center-align">{props.drink.name}</h2><br/>
         <div className="col s6 center-align" >
           <img alt={props.drink.name} src={props.drink.img_url} height="400" width="400" />
         </div>
