@@ -32,13 +32,28 @@ export function loadDrinks() {
 }
 
 
-export function loadMyBar(myBar){
+export function loadMyBar(missingEssentials){
+  console.log(missingEssentials)
   return (dispatch) => {
     dispatch({ type: 'START_LOADING_DRINK' });
     return fetch(`http://localhost:3001/recipes`, {
       accept: 'application/json',
     }).then(response => response.json())
-      .then(drinks => dispatch({ type: 'LOAD_ALL_DRINKS', payload: drinks }));
+      .then(drinks => {
+        let myDrinks = [] 
+        drinks.forEach(drink =>{
+          let check = true;
+          for(let i = 0; i < drink.ingredients.length; i++){
+            if (missingEssentials.includes(drink.ingredients[i].item.name)) {
+              check = false
+            }
+          }
+          if (check) {
+            myDrinks.push(drink)
+          }
+        })
+        dispatch({ type: 'LOAD_ALL_DRINKS', payload: myDrinks })
+      });
   };
 }
 
