@@ -26,7 +26,7 @@ class DrinkRandom extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    drink: state.drink
+    drink: state.drinks.drink
   }
 }
 

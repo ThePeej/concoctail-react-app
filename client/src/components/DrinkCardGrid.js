@@ -1,5 +1,6 @@
 import React from 'react';
 import { DrinkCard } from '../components/DrinkCard'
+import { DrinkTextCard } from '../components/DrinkTextCard'
 
 function compare(a, b) {
   if (a.name < b.name)
@@ -10,13 +11,13 @@ function compare(a, b) {
 }
 
 export const DrinkCardGrid = (props) => {
-  const drinkCards = props.drinks.sort(compare).map((drink, i) => {
-    return <DrinkCard key={i} drink={drink} />
+  const drinkTextCards = props.drinks.sort(compare).map((drink, i) => {
+    return <DrinkTextCard key={i} drink={drink} />
   })
 
   return (
     <div className="col s12">
-      {drinkCards}
+      {drinkTextCards}
     </div>
   )
 }

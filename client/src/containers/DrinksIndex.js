@@ -28,7 +28,7 @@ class DrinksIndex extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    drinks: state.drinks
+    drinks: state.drinks.drinks
   }
 }
 

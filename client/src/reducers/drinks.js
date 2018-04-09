@@ -6,12 +6,12 @@ export default function drinks(state = {
 
   switch(action.type){
     case "START_LOADING_DRINK":
-      return Object.assign({}, state, {load: true})
+      return Object.assign({}, state, {loading: true})
     case "LOAD_DRINK":
-      return Object.assign({}, state, {drink: action.payload})
+      return Object.assign({}, state, {drink: action.payload, loading: false})
     case "LOAD_ALL_DRINKS":
       console.log(action.payload)
-      return Object.assign({}, state, { drinks: action.payload })
+      return Object.assign({}, state, { drinks: action.payload, loading: false })
     default:
       return state
   }
