@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { myBarSelector } from '../actions/drinks'
 import { resetMyBar } from '../actions/drinks'
-
 import { MyBarSelector } from '../components/MyBarSelector'
 
 class MyBarEssentials extends React.Component {
@@ -15,7 +13,6 @@ class MyBarEssentials extends React.Component {
   }
 
   handleMyBarReset(){
-    console.log("reset bar!")
     this.props.resetMyBar()
   }
 

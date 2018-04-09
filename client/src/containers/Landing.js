@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-
 import { navbar } from '../actions/site'
-
 import shaker from '../shaker.png'
 
 class Landing extends React.Component {

@@ -5,8 +5,6 @@ import { bindActionCreators } from 'redux';
 import { Drink } from '../components/Drink'
 import { loadDrink } from '../actions/drinks'
 
-
-
 class DrinkShow extends React.Component {
  
   componentDidMount(){
@@ -33,6 +31,5 @@ const mapDispatchToProps = (dispatch) => {
     loadDrink: loadDrink
   }, dispatch);
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrinkShow)

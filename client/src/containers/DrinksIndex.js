@@ -1,10 +1,8 @@
 import React from 'react';
-import DrinkCardGrid from '../containers/DrinkCardGrid'
-
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import DrinkCardGrid from '../containers/DrinkCardGrid'
 import { loadDrinks } from '../actions/drinks'
 
 class DrinksIndex extends React.Component {
@@ -37,6 +35,5 @@ const mapDispatchToProps = (dispatch) => {
     loadDrinks: loadDrinks
   }, dispatch);
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrinksIndex)

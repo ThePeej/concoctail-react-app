@@ -19,8 +19,8 @@ class MyBar extends React.Component {
     this.props.viewMyBar(false)
   }
 
-  onLoadMyBar(allEssentials, missing) {
-    this.props.loadMyBar(allEssentials, missing)
+  LoadMyBar(barEssentials, missingEssentials) {
+    this.props.loadMyBar(barEssentials, missingEssentials)
   }
 
   render() {
@@ -34,7 +34,7 @@ class MyBar extends React.Component {
         </div>
         <div className="center-align col s8">
           <br/>
-          <button className="btn-large teal darken-1" onClick={() => this.onLoadMyBar(barEssentialsArray, missingEssentials)}>What can I make?</button>
+          <button className="btn-large teal darken-1" onClick={() => this.LoadMyBar(barEssentialsArray, missingEssentials)}>What can I make?</button>
           <hr/>
           {this.props.drinks !== [] ? <DrinkCardGrid drinks={this.props.drinks} /> : null}
         </div>

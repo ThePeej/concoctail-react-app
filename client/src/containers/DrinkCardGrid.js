@@ -14,8 +14,6 @@ class DrinkCardGrid extends React.Component {
       return 1;
     return 0;
   }
-
-  
   
   render(){
     const drinkTextCards = this.props.drinks.sort(this.sortByName).map((drink, i) => {
@@ -33,7 +31,6 @@ class DrinkCardGrid extends React.Component {
     )
   }
 }
-  
 
 const mapStateToProps = (state) => {
   return {
@@ -47,6 +44,5 @@ const mapDispatchToProps = (dispatch) => {
     
   }, dispatch);
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrinkCardGrid)
