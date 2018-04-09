@@ -1,11 +1,11 @@
-export function navbarOn(){
+export function navbar(boolean){
   return (dispatch) => {
-    dispatch({ type: "NAVBAR_ON" })
+    dispatch({ type: "NAVBAR", payload: boolean })
   }
 }
 
-export function navbarOff() {
+export function myBar(boolean) {
   return (dispatch) => {
-    dispatch({ type: "NAVBAR_OFF" })
+    dispatch({ type: "MYBAR", payload: boolean })
   }
 }

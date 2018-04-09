@@ -1,12 +1,13 @@
 export default function drinks(state = {
   navbar: true,
+  mybar: false
 }, action) {
 
   switch (action.type) {
-    case "NAVBAR_ON":
-      return Object.assign({}, state, { navbar: true })
-    case "NAVBAR_OFF":
-      return Object.assign({}, state, { navbar: false })
+    case "NAVBAR":
+      return Object.assign({}, state, { navbar: action.payload })
+    case "MYBAR":
+      return Object.assign({}, state, { mybar: action.payload })
     default:
       return state
   }

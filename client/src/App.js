@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 // import logo from './logo.svg';
 import './App.css';
 
+import MyBar from './containers/MyBar'
 import DrinkShow from './containers/DrinkShow'
 import DrinkRandom from './containers/DrinkRandom'
 import DrinksIndex from './containers/DrinksIndex'
@@ -20,10 +21,11 @@ class App extends Component {
       <Router>
         <div>
           {this.props.site.navbar ? <Navbar /> : null}
-          <div className="container">
+          <div className={this.props.site.mybar ? "" : "container"}>
             <div className="col s-12">
             <Switch>
               <Route exact path ="/" component={Landing} />
+              <Route exact path ='/mybar' component={MyBar} />
               <Route exact path="/drinks" component={DrinksIndex} />
               <Route exact path="/drinks/random" component={DrinkRandom} />
               <Route exact path='/drinks/:id' component={DrinkShow} />

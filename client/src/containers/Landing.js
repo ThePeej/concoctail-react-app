@@ -3,18 +3,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
-import { navbarOn } from '../actions/site'
-import { navbarOff } from '../actions/site'
+import { navbar } from '../actions/site'
 
 import shaker from '../shaker.png'
 
 class Landing extends React.Component {
   componentWillMount() {
-    this.props.navbarOff()
+    this.props.navbar(false)
   }
 
   componentWillUnmount(){
-    this.props.navbarOn()
+    this.props.navbar(true)
   }
 
   render(){
@@ -45,8 +44,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    navbarOn: navbarOn,
-    navbarOff: navbarOff
+    navbar: navbar,
   }, dispatch);
 };
 
