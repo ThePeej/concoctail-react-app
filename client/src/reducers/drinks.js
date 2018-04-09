@@ -8,6 +8,7 @@ export default function drinks(state = {
     case "START_LOADING_DRINK":
       return Object.assign({}, state, {loading: true})
     case "LOAD_DRINK":
+      console.log(action)
       return Object.assign({}, state, {drink: action.payload, loading: false})
     case "LOAD_ALL_DRINKS":
       console.log(action.payload)

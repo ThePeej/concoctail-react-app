@@ -3,25 +3,20 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { Drink } from '../components/Drink'
-import { loadRandomDrink } from '../actions/drinks'
+import { loadDrink } from '../actions/drinks'
 
 
 
 class DrinkShow extends React.Component {
  
-  handleOnClick = () => {
-    this.props.loadRandomDrink()
+  componentDidMount(){
+    this.props.loadDrink(this.props.match.params.id)
   }
 
   render() {
-
     return (
       <div>
-        <h1>Drink Show Component</h1>
-        <p>Will display all info of a drink</p>
-        <button className="waves-effect waves-blue-grey btn-flat" onClick={this.handleOnClick}>Random Drink</button>
-        <hr/>
-        <Drink drink={this.props.drink}/>
+        {this.props.drink !== '' ? <Drink drink={this.props.drink} /> : null}
       </div>
     )
   }
@@ -29,13 +24,13 @@ class DrinkShow extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    drink: state.drink
+    drink: state.drinks.drink
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    loadRandomDrink: loadRandomDrink
+    loadDrink: loadDrink
   }, dispatch);
 };
 

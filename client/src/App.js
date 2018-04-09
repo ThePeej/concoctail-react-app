@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -22,9 +22,12 @@ class App extends Component {
           {this.props.site.navbar ? <Navbar /> : null}
           <div className="container">
             <div className="col s-12">
+            <Switch>
               <Route exact path ="/" component={Landing} />
-              <Route exact path="/drinks/random" component={DrinkRandom} />
               <Route exact path="/drinks" component={DrinksIndex} />
+              <Route exact path="/drinks/random" component={DrinkRandom} />
+              <Route exact path='/drinks/:id' component={DrinkShow} />
+            </Switch>              
             </div>
           </div>
         </div>
