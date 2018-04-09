@@ -4,11 +4,16 @@ import { bindActionCreators } from 'redux';
 
 import { Drink } from '../components/Drink'
 import { loadDrink } from '../actions/drinks'
+import { unloadDrink } from '../actions/drinks'
 
 class DrinkShow extends React.Component {
  
   componentDidMount(){
     this.props.loadDrink(this.props.match.params.id)
+  }
+
+  componentWillUnmount() {
+    this.props.unloadDrink()
   }
 
   render() {
@@ -28,7 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    loadDrink: loadDrink
+    loadDrink: loadDrink,
+    unloadDrink: unloadDrink
   }, dispatch);
 };
 

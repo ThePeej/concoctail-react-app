@@ -4,11 +4,16 @@ import { bindActionCreators } from 'redux';
 
 import { Drink } from '../components/Drink'
 import { loadRandomDrink } from '../actions/drinks'
+import { unloadDrink } from '../actions/drinks'
 
 class DrinkRandom extends React.Component {
  
   handleOnClick = () => {
     this.props.loadRandomDrink()
+  }
+
+  componentWillUnmount() {
+    this.props.unloadDrink()
   }
 
   render() {
@@ -32,7 +37,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    loadRandomDrink: loadRandomDrink
+    loadRandomDrink: loadRandomDrink,
+    unloadDrink: unloadDrink
   }, dispatch);
 };
 

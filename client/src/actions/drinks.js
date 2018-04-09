@@ -69,3 +69,9 @@ export function resetMyBar() {
     dispatch({ type: 'RESET_MYBAR'});
   };
 }
+
+export function unloadDrink() {
+  return (dispatch) => {
+    dispatch({ type: 'LOAD_DRINK', payload: '' });
+  };
+}
