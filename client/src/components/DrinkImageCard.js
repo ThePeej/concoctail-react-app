@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const DrinkCard = (props) => {
+export const DrinkImageCard = (props) => {
 
   const ingredients = props.drink.ingredients.map((ingredient, i) => {
     return <li key={i}>{ingredient.quantity} {ingredient.item.name}</li>
@@ -9,10 +9,10 @@ export const DrinkCard = (props) => {
   const drink_url = `/drinks/${props.drink.id}`
 
   return(
-    <div className="col s2">
+    <div className="col s3">
       <div className="card">
         <span>
-          <img class="responsive-img" src={props.drink.img_url} />
+          <img className="responsive-img" src={props.drink.img_url} />
         </span>
       </div>
     </div>

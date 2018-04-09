@@ -1,12 +1,12 @@
 import React from 'react';
-import { DrinkCardGrid } from '../components/DrinkCardGrid'
-
+import DrinkCardGrid from '../containers/DrinkCardGrid'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { loadDrinks } from '../actions/drinks'
 import { myBar } from '../actions/site'
+
 
 class MyBar extends React.Component {
 
@@ -28,11 +28,11 @@ class MyBar extends React.Component {
         <div className="col s3">
           <h4>My Bar</h4>
         </div>
-        <div className="center-align">
+        <div className="center-align col s9">
           <h4>Browse Cocktail Recipes</h4>
           <hr />
+          {this.props.drinks !== [] ? <DrinkCardGrid drinks={this.props.drinks} /> : null}
         </div>
-        {this.props.drinks !== [] ? <DrinkCardGrid drinks={this.props.drinks} /> : null}
       </div>
     )
   }

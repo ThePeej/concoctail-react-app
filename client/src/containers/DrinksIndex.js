@@ -1,5 +1,5 @@
 import React from 'react';
-import { DrinkCardGrid } from '../components/DrinkCardGrid'
+import DrinkCardGrid from '../containers/DrinkCardGrid'
 
 
 import { connect } from 'react-redux';
@@ -20,7 +20,7 @@ class DrinksIndex extends React.Component {
           <h4>Browse Cocktail Recipes</h4>
           <hr />
         </div>
-        {this.props.drinks !== [] ? <DrinkCardGrid drinks={this.props.drinks} /> : null}
+        {this.props.drinks !== [] ? <DrinkCardGrid/> : null}
       </div>
     )
   }
