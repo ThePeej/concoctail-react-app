@@ -19,6 +19,7 @@ Run all rake migrations with `rake db:migrate`
 
 RUN IN RAILS CONSOLE TO SET UP DATABASE:
 
+```
 drinks = eval File.open('db/drinks.rb').read
 
 drinks.each do |d|
@@ -54,6 +55,7 @@ drinks.each do |d|
     ingredient.save
   end
 end
+```
 
 Start up a rails server on port 3001: `rails s -p 3001`
 
