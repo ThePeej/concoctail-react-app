@@ -75,3 +75,9 @@ export function unloadDrink() {
     dispatch({ type: 'LOAD_DRINK', payload: '' });
   };
 }
+
+export function unloadDrinks() {
+  return (dispatch) => {
+    dispatch({ type: 'LOAD_ALL_DRINKS', payload: [] });
+  };
+}
