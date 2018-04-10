@@ -17,7 +17,7 @@ Run `bundle install` to install all gem dependencies.
 
 Run all rake migrations with `rake db:migrate`
 
-Run in Rails Console (`rails c`) to set up database: 
+Run in Rails Console (`rails c`) to set up database:
 
 ```
 drinks = eval File.open('db/drinks.rb').read
